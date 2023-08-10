@@ -19,6 +19,10 @@ const StyledModal = styled.div`
   max-width: 80vw;
   max-height: 80vh;
   overflow-y: scroll;
+
+  @media all and (max-width: 768px) {
+    padding: 3.2rem 1.5rem;
+  }
 `;
 
 const Overlay = styled.div`

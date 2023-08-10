@@ -92,9 +92,9 @@ function BookingRow({
           {format(new Date(endDate), "MMM dd yyyy")}
         </span>
       </Stacked>
-
-      <Tag type={statusToTagName[status]}>{status.replace("-", " ")}</Tag>
-
+      <div>
+        <Tag type={statusToTagName[status]}>{status.replace("-", " ")}</Tag>
+      </div>
       <Amount>{formatCurrency(totalPrice)}</Amount>
       <Modal>
         {" "}

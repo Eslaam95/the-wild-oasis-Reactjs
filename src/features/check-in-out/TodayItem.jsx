@@ -19,6 +19,10 @@ const StyledTodayItem = styled.li`
   &:first-child {
     border-top: 1px solid var(--color-grey-100);
   }
+
+  @media all and (max-width: 1330px) {
+    min-width: 550px;
+  }
 `;
 
 const Guest = styled.div`

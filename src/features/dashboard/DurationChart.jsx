@@ -29,7 +29,7 @@ const ChartBox = styled.div`
   & .recharts-pie-label-text {
     font-weight: 600;
   }
-  @media all and (max-width: 768px) {
+  @media all and (max-width: 515px) {
     padding: 2.4rem 20px 30%;
 
     & .recharts-legend-wrapper {
@@ -175,7 +175,7 @@ function useWindowSize() {
 
 function DurationChart({ confirmedStays }) {
   const size = useWindowSize();
-  const CX = size.at(0) <= 768 ? "-1500%" : "47%";
+  const CX = size.at(0) <= 515 ? "-1500%" : "47%";
   const { isDarkMode } = useDarkMode();
   const startData = isDarkMode ? startDataDark : startDataLight;
   const data = prepareData(startData, confirmedStays);

@@ -9,6 +9,7 @@ const StyledConfirmDelete = styled.div`
   flex-direction: column;
   gap: 1.2rem;
 
+  max-width: 100% !important;
   & p {
     color: var(--color-grey-500);
     margin-bottom: 1.2rem;

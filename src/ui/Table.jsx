@@ -40,7 +40,8 @@ const StyledHeader = styled(CommonRow)`
     width: fit-content;
     & > div,
     & > img {
-      min-width: 100px;
+      min-width: 130px;
+      padding: 10px;
     }
   }
 `;
@@ -57,7 +58,8 @@ const StyledRow = styled(CommonRow)`
     & > div,
     & > img,
     & > span {
-      min-width: 100px;
+      min-width: 130px;
+      padding: 10px;
     }
     & > img {
       padding: 20px;

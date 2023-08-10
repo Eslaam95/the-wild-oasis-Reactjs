@@ -29,6 +29,10 @@ const StyledToggle = styled.button`
     height: 2.4rem;
     color: var(--color-grey-700);
   }
+
+  @media all and (max-width: 1268px) {
+    margin-right: 55px;
+  }
 `;
 
 const StyledList = styled.ul`

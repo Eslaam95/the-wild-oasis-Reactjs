@@ -37,7 +37,7 @@ const FormRow = styled.div`
     gap: 1.2rem;
   }
 
-  @media all and (max-width: 1039px) {
+  @media all and (max-width: 885px) {
     display: flex;
     flex-direction: column;
     gap: 1rem;
