@@ -59,8 +59,8 @@ const StyledNavLink = styled(NavLink)`
     color: var(--color-brand-600);
   }
 
-  @media all and (max-width: 1039) {
-    padding: 1.2rem 1.4rem !important;
+  @media all and (max-width: 1039px) {
+    padding: 1.2rem 1rem !important;
   }
 `;
 function MainNav() {
