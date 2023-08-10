@@ -8,6 +8,11 @@ const StyledLayout = styled.div`
   grid-template-columns: 26rem 1fr;
   grid-template-rows: auto 1fr;
   height: 100vh;
+
+  @media all and (max-width: 1039px) {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
 `;
 const StyledContainer = styled.div`
   max-width: 120rem;
@@ -19,7 +24,14 @@ const StyledContainer = styled.div`
 const Main = styled.main`
   background-color: var(--color-grey-50);
   padding: 4rem 4.8rem 6.4rem;
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  @media all and (max-width: 1170px) and (min-width: 1040px) {
+    padding: 4rem 1.8rem 6.4rem;
+  }
+  @media all and (max-width: 768px) {
+    padding: 4rem 1.5rem 6.4rem;
+  }
 `;
 
 function AppLayout() {

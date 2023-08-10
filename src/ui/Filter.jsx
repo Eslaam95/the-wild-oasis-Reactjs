@@ -5,12 +5,17 @@ import styled, { css } from "styled-components";
 
 const StyledFilter = styled.div`
   border: 1px solid var(--color-grey-100);
-  background-color: var(--color-grey-0);
+  background-color: var(--color-grey-200);
   box-shadow: var(--shadow-sm);
   border-radius: var(--border-radius-sm);
   padding: 0.4rem;
   display: flex;
-  gap: 0.4rem;
+  gap: 0.8rem;
+
+  @media all and (max-width: 768px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
 `;
 
 const FilterButton = styled.button`
@@ -30,7 +35,6 @@ const FilterButton = styled.button`
   /* To give the same height as select */
   padding: 0.44rem 0.8rem;
   transition: all 0.3s;
-
   &:hover:not(:disabled) {
     background-color: var(--color-brand-600);
     color: var(--color-brand-50);

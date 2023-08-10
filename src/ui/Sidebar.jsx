@@ -9,6 +9,10 @@ const StyledSidebar = styled.aside`
   display: flex;
   flex-direction: column;
   gap: 3.2rem;
+
+  @media all and (max-width: 1039px) {
+    grid-row: 2;
+  }
 `;
 function Sidebar() {
   return (

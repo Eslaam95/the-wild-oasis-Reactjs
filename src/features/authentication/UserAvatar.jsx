@@ -2,6 +2,7 @@
 /* eslint-disable no-unused-vars */
 import styled from "styled-components";
 import { useUser } from "./useUser";
+import { Link } from "react-router-dom";
 const StyledUserAvatar = styled.div`
   display: flex;
   gap: 1.2rem;
@@ -25,13 +26,16 @@ function UserAvatar() {
   const { user } = useUser();
   const { fullName, avatar } = user.user_metadata;
   return (
-    <StyledUserAvatar>
-      <Avatar
-        src={avatar || "default-user.jpg"}
-        at={`avatar of ${fullName}`}
-      ></Avatar>
-      <span>{fullName}</span>
-    </StyledUserAvatar>
+    <Link to="account">
+      <StyledUserAvatar>
+        {" "}
+        <Avatar
+          src={avatar || "default-user.jpg"}
+          at={`avatar of ${fullName}`}
+        ></Avatar>
+        <span>{fullName}</span>
+      </StyledUserAvatar>
+    </Link>
   );
 }
 export default UserAvatar;

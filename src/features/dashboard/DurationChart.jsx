@@ -11,6 +11,7 @@ import {
   Tooltip,
 } from "recharts";
 import { useDarkMode } from "../../context/DarkModecontext";
+import { useLayoutEffect, useState } from "react";
 
 const ChartBox = styled.div`
   /* Box */
@@ -18,7 +19,7 @@ const ChartBox = styled.div`
   border: 1px solid var(--color-grey-100);
   border-radius: var(--border-radius-md);
 
-  padding: 2.4rem 3.2rem;
+  padding: 2.4rem 10px 4rem;
   grid-column: 3 / span 2;
 
   & > *:first-child {
@@ -27,6 +28,22 @@ const ChartBox = styled.div`
 
   & .recharts-pie-label-text {
     font-weight: 600;
+  }
+  @media all and (max-width: 768px) {
+    padding: 2.4rem 20px 30%;
+
+    & .recharts-legend-wrapper {
+      position: absolute;
+      top: 110% !important;
+      bottom: -30px !important;
+      height: 50px !important;
+      width: 100% !important;
+      left: 20px;
+    }
+    & .recharts-legend-wrapper ul li {
+      display: inline-block;
+      float: left;
+    }
   }
 `;
 
@@ -142,14 +159,34 @@ function prepareData(startData, stays) {
 
   return data;
 }
+
+function useWindowSize() {
+  const [size, setSize] = useState([0, 0]);
+  useLayoutEffect(() => {
+    function updateSize() {
+      setSize([window.innerWidth, window.innerHeight]);
+    }
+    window.addEventListener("resize", updateSize);
+    updateSize();
+    return () => window.removeEventListener("resize", updateSize);
+  }, []);
+  return size;
+}
+
 function DurationChart({ confirmedStays }) {
+  const size = useWindowSize();
+  const CX = size.at(0) <= 768 ? "-1500%" : "47%";
   const { isDarkMode } = useDarkMode();
   const startData = isDarkMode ? startDataDark : startDataLight;
   const data = prepareData(startData, confirmedStays);
   return (
     <ChartBox>
       <Heading as="h2">Stay durations summary</Heading>
-      <ResponsiveContainer width="100%" height={240}>
+      <ResponsiveContainer
+        width={"100%"}
+        height={240}
+        margin={{ top: 5, right: 55, bottom: 5, left: 5 }}
+      >
         <PieChart>
           <Pie
             data={data}
@@ -157,7 +194,7 @@ function DurationChart({ confirmedStays }) {
             dataKey="value"
             innerRadius={85}
             outerRadius={110}
-            cx="40%"
+            cx={CX}
             cy="50%"
             paddingAngle={3}
           >
@@ -173,7 +210,7 @@ function DurationChart({ confirmedStays }) {
           <Legend
             verticalAlign="middle"
             align="right"
-            width="30%"
+            width="35%"
             layout="vertical"
             iconSize={15}
             iconType="circles"

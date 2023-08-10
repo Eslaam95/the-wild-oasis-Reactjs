@@ -15,6 +15,17 @@ const Row = styled.div`
       flex-direction: column;
       gap: 1.6rem;
     `}
+
+
+    @media all and (max-width:1268px) {
+    ${(props) =>
+      props.type === "horizontal" &&
+      css`
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+      `}
+  }
 `;
 
 Row.defaultProps = {

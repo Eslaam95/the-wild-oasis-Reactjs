@@ -9,6 +9,11 @@ const StyledHeader = styled.header`
   gap: 2.4rem;
   align-items: center;
   justify-content: flex-end;
+
+  @media all and (max-width: 1039px) {
+    justify-content: space-between;
+    padding: 1.2rem 1.2rem;
+  }
 `;
 function Header() {
   return (

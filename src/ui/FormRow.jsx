@@ -9,6 +9,13 @@ const StyledFormRow = styled.div`
 
   padding: 1.2rem 0;
 
+  @media all and (max-width: 1039px) {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
   &:first-child {
     padding-top: 0;
   }

@@ -11,6 +11,14 @@ const NavList = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
+
+  @media all and (max-width: 1039px) {
+    flex-direction: row;
+    justify-content: center;
+    & span {
+      display: none;
+    }
+  }
 `;
 
 const StyledNavLink = styled(NavLink)`
@@ -49,6 +57,10 @@ const StyledNavLink = styled(NavLink)`
   &.active:link svg,
   &.active:visited svg {
     color: var(--color-brand-600);
+  }
+
+  @media all and (max-width: 1039) {
+    padding: 1.2rem 1.4rem !important;
   }
 `;
 function MainNav() {
