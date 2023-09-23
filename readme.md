@@ -16,7 +16,6 @@ Hotel management SPA
 - Skills
 
 
-.
 ## Key Features
 - Light/Dark mode.  
 - User Management.
