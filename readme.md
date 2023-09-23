@@ -1,6 +1,6 @@
 ## The-Wild-Oasis
 
-Hotel management SPA
+Hotel Management SPA
 
 ## Demo:  
 
