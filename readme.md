@@ -6,7 +6,7 @@ Hotel management SPA
 
 [https://wild-oases.netlify.app/](https://wild-oases.netlify.app/)
 
-Initial login info is already there, just hit 'login' and here you go...
+<br/>Initial login info is already there, just hit 'login' and here you go...
 
 
 ## Table of Contents
